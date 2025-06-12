@@ -1,0 +1,17 @@
+[application]
+name = "it-management"
+
+[web.app]
+title = "IT Management"
+
+[web.watcher]
+watch_path = ["src"]
+
+[web.resource]
+style = ["tailwind.css"]
+
+[web.resource.dev]
+include = []
+
+[web.server]
+loglevel = "info"

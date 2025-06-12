@@ -1,0 +1,12 @@
+{
+  "name": "tailwind-builder",
+  "version": "1.0.0",
+  "description": "Tailwind CSS compiler for Dioxus project",
+  "scripts": {
+    "watch:css": "tailwindcss -i ./assets/styling/main.css -o ./assets/tailwind.css --watch",
+    "build:css": "tailwindcss -i ./assets/styling/main.css -o ./assets/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}

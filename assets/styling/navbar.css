@@ -1,0 +1,76 @@
+#navbar {
+  @apply fixed top-0 left-0 right-0 z-50
+         bg-white/90 dark:bg-dark-primary/90 backdrop-blur-lg
+         border-b border-gray-200/50 dark:border-dark-secondary/50
+         transition-all duration-300 shadow-sm
+         supports-[backdrop-filter]:bg-white/60
+         supports-[backdrop-filter]:dark:bg-dark-primary/60;
+}
+
+.navbar-container {
+  @apply pancake-container flex items-center justify-between h-20 px-6;
+}
+
+.navbar-brand {
+  @apply flex items-center space-x-3 group;
+}
+
+.navbar-brand img {
+  @apply h-10 w-auto transition-transform duration-300 
+         group-hover:scale-110 group-hover:rotate-3;
+}
+
+.navbar-brand span {
+  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent
+         text-2xl font-bold tracking-tight
+         transition-all duration-300
+         group-hover:from-accent group-hover:to-secondary;
+}
+
+.navbar-menu {
+  @apply hidden md:flex items-center space-x-6;
+}
+
+.navbar-menu-mobile {
+  @apply md:hidden fixed inset-0 
+         bg-white/95 dark:bg-dark-primary/95 backdrop-blur-lg
+         flex flex-col items-center justify-center space-y-6
+         transform transition-all duration-500 ease-in-out;
+}
+
+.navbar-menu-mobile[data-visible="false"] {
+  @apply -translate-y-full;
+}
+
+.navbar-menu-mobile[data-visible="true"] {
+  @apply translate-y-0;
+}
+
+.navbar-link {
+  @apply relative py-2 px-4 text-sm font-medium
+         text-gray-700 dark:text-gray-300
+         transition-all duration-300 ease-out
+         hover:text-primary dark:hover:text-white
+         after:absolute after:bottom-0 after:left-0 
+         after:w-0 after:h-0.5 after:rounded-full
+         after:bg-gradient-to-r after:from-primary after:to-accent
+         after:transition-all after:duration-300
+         hover:after:w-full;
+}
+
+.navbar-toggle {
+  @apply md:hidden p-3 rounded-full
+         transition-all duration-300
+         hover:bg-gray-100 dark:hover:bg-dark-secondary
+         focus:outline-none focus:ring-2 focus:ring-primary/20
+         active:scale-95;
+}
+
+/* Navigation Animations */
+.nav-item-active {
+  @apply text-primary dark:text-white after:w-full;
+}
+
+.nav-scroll-shadow {
+  @apply shadow-md;
+}

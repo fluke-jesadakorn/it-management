@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import other CSS files */
+@import "navbar.css";
+@import "blog.css";
+
+/* Custom styles can be added here */
+
+@layer base {
+  body {
+    @apply bg-white text-gray-800 transition-colors duration-200;
+  }
+
+  .dark body {
+    @apply bg-dark-primary text-gray-100;
+  }
+}
+
+/* Dark mode styles */
+.dark {
+  & .card {
+    @apply bg-dark-secondary text-gray-100 shadow-lg;
+  }
+
+  & .input {
+    @apply bg-dark-secondary border-gray-600 text-gray-100;
+  }
+
+  & .button {
+    @apply bg-dark-accent hover:bg-dark-secondary text-white;
+  }
+
+  & table {
+    @apply text-gray-100 border-gray-700;
+  }
+
+  & th {
+    @apply bg-dark-secondary border-gray-700;
+  }
+
+  & td {
+    @apply border-gray-700;
+  }
+
+  & .hover-card:hover {
+    @apply bg-dark-secondary;
+  }
+}
+
+/* Light mode base styles */
+.card {
+  @apply bg-white shadow-pancake rounded-pancake p-6 
+         transition-all duration-300 hover:shadow-pancake-hover
+         border border-gray-100;
+}
+
+.input {
+  @apply bg-white border rounded-lg px-4 py-3 
+         transition-all duration-200
+         focus:ring-2 focus:ring-primary/20 focus:border-primary
+         hover:border-gray-400;
+}
+
+.button {
+  @apply bg-primary hover:bg-secondary text-white 
+         rounded-lg px-6 py-3 font-medium
+         transition-all duration-300
+         hover:shadow-lg hover:-translate-y-0.5
+         active:translate-y-0 active:shadow-md
+         disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.hover-card {
+  @apply transition-all duration-300 
+         hover:bg-gray-50 hover:shadow-pancake
+         active:bg-gray-100;
+}
+
+/* Typography improvements */
+h1 {
+  @apply text-4xl font-bold mb-6 tracking-tight;
+}
+
+h2 {
+  @apply text-2xl font-semibold mb-4 tracking-tight;
+}
+
+h3 {
+  @apply text-xl font-medium mb-3;
+}
+
+p {
+  @apply leading-relaxed text-gray-600 dark:text-gray-300;
+}
+
+/* Loading states */
+.loading {
+  @apply animate-pulse bg-gray-200 dark:bg-gray-700;
+}
+
+/* Transitions */
+.fade-enter {
+  @apply transition-opacity duration-300 opacity-0;
+}
+
+.fade-enter-active {
+  @apply opacity-100;
+}
+
+/* Focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary/50;
+}
