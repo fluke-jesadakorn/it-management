@@ -1,7 +1,13 @@
-pub mod views;
-pub mod components;
-pub mod utils;
+mod views;
+mod components;
+mod utils;
 pub mod server;
-pub mod routes;
+mod routes;
+mod configs;
+mod tests;
+mod error;
 
-pub use crate::routes::Route;
+pub use crate::routes::*;
+pub use crate::utils::*;
+pub use crate::configs::get_ssh_password;
+pub use crate::error::SSHError;

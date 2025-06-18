@@ -1,6 +1,5 @@
 use dioxus::prelude::*;
-use it_management::views::{ Home, Navbar, User, UserList };
-use it_management::utils::ThemeState;
+use it_management::ThemeState;
 use it_management::Route;
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
@@ -8,6 +7,7 @@ const MAIN_CSS: Asset = asset!("/assets/styling/main.css");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
 
 fn main() {
+    
     #[cfg(not(target_arch = "wasm32"))]
     {
         dotenv::dotenv().ok();

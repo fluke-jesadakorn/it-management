@@ -1,17 +1,18 @@
-pub mod command;
 pub mod network;
 pub mod license;
-pub mod resolve_computer;
 
-// Re-export commonly used functionality from command module
-pub use command::{
+// Re-export commonly used functionality
+pub use network::{
     resolve_network_info,
     resolve_computer,
     establish_ssh_connection,
     execute_ssh_command,
     execute_concurrent_commands,
+    DiscoveryResult,
+};
+
+pub use license::{
     check_expired_adobe_plugin_comet_license,
     get_software_info,
     clear_system_cache,
-    DiscoveryResult,
 };
